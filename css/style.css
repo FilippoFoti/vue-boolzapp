@@ -9,18 +9,237 @@
 body {
     height: 100vh;
     background: linear-gradient(180deg, rgba(0, 150, 136, 1) 0%, rgba(0, 150, 136, 1) 15%, rgba(218, 219, 212, 1) 15%, rgba(218, 219, 212, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
 }
 
 #app {
-    background-color: aqua;
-    border: 1px solid black;
+    background-color: white;
     height: 95vh;
     width: 80%;
-    margin: 25px auto;
 }
 
-/* HEADER */
-
 /* MAIN */
+main {
+    display: flex;
+}
 
-/* FOOTER */
+/* ARTICLE.LEFT */
+.article-left {
+    width: 35%;
+    border-right: 2px solid rgba(214, 214, 214, 1);
+}
+
+.list-header {
+    background-color: rgba(234, 234, 234, 1);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-header {
+    display: flex;
+    align-items: center;
+}
+
+.user-header img {
+    width: 45px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.user-header h2 {
+    font-size: 1rem;
+}
+
+.icon-header {
+    font-size: 1.1rem;
+    color: rgba(177, 177, 177, 1);
+    display: flex;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+.notifications {
+    height: 60px;
+    background-color: rgba(142, 218, 252, 1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notifications i {
+    color: rgba(142, 218, 252, 1);
+    background-color: white;
+    font-size: 1.1rem;
+    padding: 12px 10px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.text h2 {
+    font-size: 0.75rem;
+}
+
+.text a {
+    font-size: 0.7rem;
+    color: rgba(79, 116, 133, 1);
+}
+
+nav {
+    height: 45px;
+    background-color: rgba(250, 250, 250, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .search {
+    background-color: white;
+    width: 95%;
+    height: 35px;
+    border: 2px solid rgba(250, 250, 250, 1);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+nav i::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 35px;
+    border-right: 2px solid rgba(250, 250, 250, 1);
+    color: rgba(182, 185, 187, 1);
+}
+
+nav input {
+    height: 33px;
+    border: none;
+    border-radius: 5px;
+    width: calc(100% - 60px);
+    padding-left: 10px;
+    outline: 0;
+}
+
+.list-contact {
+    height: calc(95vh - 160px);
+    overflow-y: scroll;
+}
+
+.users {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(245, 245, 245, 1);
+}
+
+.contact {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* background-color: rgba(233, 235, 235, 1); */
+}
+
+.contact img {
+    width: 55px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.description {
+    height: 55px;
+}
+
+.contact .description h2 {
+    font-size: 1.1rem;
+}
+
+.contact .description p {
+    font-size: 0.9rem;
+    color: rgba(182, 185, 187, 1);
+}
+
+.date {
+    height: 55px;
+    padding: 5px;
+    font-size: 0.9rem;
+    color: rgba(182, 185, 187, 1);
+}
+
+/* ARTICLE-RIGHT */
+.article-right {
+    width: 65%;
+}
+
+.chat-header {
+    background-color: rgba(234, 234, 234, 1);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-header .contact {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-header img {
+    width: 45px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.user-header .description {
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat {
+    height: calc(95vh - 115px);
+    overflow-y: scroll;
+    background-image: url(../img/mine.jpg);
+}
+
+footer {
+    height: 60px;
+    background-color: rgba(243, 238, 234, 1);
+}
+
+.footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer i {
+    font-size: 1.1rem;
+    color: rgba(107, 115, 118, 1);
+    margin: 0 20px;
+}
+
+.footer .message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer .message input {
+    width: 100%;
+    height: 45px;
+    font-size: 1.1rem;
+    border: none;
+    outline: 0;
+    padding-left: 10px;
+}
