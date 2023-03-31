@@ -1,0 +1,26 @@
+/* RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+body {
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 150, 136, 1) 0%, rgba(0, 150, 136, 1) 15%, rgba(218, 219, 212, 1) 15%, rgba(218, 219, 212, 1) 100%);
+}
+
+#app {
+    background-color: aqua;
+    border: 1px solid black;
+    height: 95vh;
+    width: 80%;
+    margin: 25px auto;
+}
+
+/* HEADER */
+
+/* MAIN */
+
+/* FOOTER */
