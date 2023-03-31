@@ -39,6 +39,7 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
+
                 <div class="notifications">
                     <i class="fa-solid fa-bell-slash"></i>
                     <div class="text">
@@ -46,19 +47,22 @@
                         <a href="">Attiva notifiche desktop</a>
                     </div>
                 </div>
+
                 <nav>
                     <div class="search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </nav>
+
                 <div class="list-contact">
-                    <div class="users">
+                    <div class="users" v-for="friend in contacts">
                         <div class="contact">
-                            <img src="img/avatar_1.jpg" alt="Foto">
+                            <img :src="`img/avatar${friend.avatar}.jpg`" :alt="friend.name">
                             <div class="description">
-                                <h2>Michele</h2>
-                                <p>Ultimo messaggio inviato</p>
+                                <h2>{{ friend.name }}</h2>
+                                <!-- <p>Ultimo messaggio inviato</p> -->
+                                <p>{{friend.messages[friend.messages.length - 1].message}}</p>
                             </div>
                         </div>
                         <div class="date">
@@ -85,7 +89,9 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
+
                 <div class="chat"></div>
+
                 <footer>
                     <div class="footer">
                         <i class="fa-regular fa-face-smile"></i>
@@ -98,9 +104,6 @@
             </article>
         </main>
 <!-- /MAIN -->
-
-<!-- FOOTER -->
-<!-- /FOOTER -->
     </div>
 
 <!-- SCRIPT-JS -->
