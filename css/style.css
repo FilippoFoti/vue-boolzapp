@@ -205,11 +205,53 @@ nav input {
     flex-direction: column;
 }
 
+/* CHAT */
 .chat {
     height: calc(95vh - 115px);
     overflow-y: scroll;
     background-image: url(../img/mine.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.container {
+    width: 90%;
+    height: calc(100% - 20px);
+    display: grid;
+    align-items: end;
+    align-content: end;
+}
+
+.newChat {
+    min-width: 10%;
+    max-width: 60%;
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin: 10px;
+    position: relative;
+}
+
+.white{
+    background-color: white;
+    justify-self: left;
+}
+
+.green {
+    background-color: rgba(213, 249, 186, 1);
+    justify-self: right;
+}
+
+span {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: rgba(182, 185, 187, 1);
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+/* /CHAT */
 
 footer {
     height: 60px;

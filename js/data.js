@@ -165,8 +165,17 @@ createApp ({
                         }
                     ],
                 }
-            ]
-
+            ],
+            newContact: "",
+            item: "",
+            newMessage: "",
+        }
+    },
+    methods: {
+        change(item) {
+            this.newContact = item.avatar;
+            this.item = item;
+            this.newMessage = item.messages;
         }
     }
 }).mount("#app");

@@ -56,13 +56,12 @@
                 </nav>
 
                 <div class="list-contact">
-                    <div class="users" v-for="friend in contacts">
+                    <div class="users" v-for="friend in contacts" @click="change(friend)">
                         <div class="contact">
                             <img :src="`img/avatar${friend.avatar}.jpg`" :alt="friend.name">
                             <div class="description">
                                 <h2>{{ friend.name }}</h2>
-                                <!-- <p>Ultimo messaggio inviato</p> -->
-                                <p>{{friend.messages[friend.messages.length - 1].message}}</p>
+                                <p>{{ friend.messages[friend.messages.length - 1].message }}</p>
                             </div>
                         </div>
                         <div class="date">
@@ -76,10 +75,10 @@
                 <div class="chat-header">
                     <div class="user-header">
                         <div class="contact">
-                            <img src="img/avatar_1.jpg" alt="Foto">
+                            <img :src="`img/avatar${newContact}.jpg`" v-if="newContact !== '' " :alt="item.name">
                             <div class="description">
-                                <h2>Michele</h2>
-                                <p>Ultimo accesso oggi alle 12.00</p>
+                                <h2>{{ item.name }}</h2>
+                                <p v-if="newContact !== '' ">Ultimo accesso oggi alle 12.00</p>
                             </div>
                         </div>
                     </div>
@@ -90,7 +89,13 @@
                     </div>
                 </div>
 
-                <div class="chat"></div>
+                <div class="chat">
+                    <div class="container">
+                        <div class="newChat" v-for="newChat in newMessage" :class="newChat.status == 'sent' ? 'green' : 'white'">
+                            <p>{{ newChat.message }} <span>{{newChat.date.substring(11).slice(0, - 3)}}</span></p>
+                        </div>
+                    </div>
+                </div>
 
                 <footer>
                     <div class="footer">
