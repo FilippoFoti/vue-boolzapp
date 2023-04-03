@@ -1,8 +1,5 @@
 const {createApp} = Vue;
 
-const dt = luxon.DateTime;
-console.log(dt.now().setLocale('it').toLocaleString(dt.TIME_24_SIMPLE));
-
 createApp ({
     data(){
         return {
@@ -206,7 +203,7 @@ createApp ({
         },
         searchContact() {
             this.contacts.forEach(item => {
-                item.visible = item.name.toLowerCase().includes(this.friendSearch);
+                item.visible = item.name.toLowerCase().includes(this.friendSearch.toLowerCase());
             })
         }
     },
