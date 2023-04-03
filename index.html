@@ -51,13 +51,14 @@
                 <nav>
                     <div class="search">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <!-- <label for="search-friend"></label> -->
+                        <input type="search" placeholder="Cerca o inizia una nuova chat" id="search-friend" v-model="friendSearch" @keyup="searchContact">
                     </div>
                 </nav>
 
                 <div class="list-contact">
-                    <div class="users" v-for="friend in contacts" @click="change(friend)">
-                        <div class="contact">
+                    <div class="users" v-for="friend in contacts" @click="change(friend)" v-show="friend.visible" :class="indexContact == friend ? 'active' : '' ">
+                    <div class="contact">
                             <img :src="`img/avatar${friend.avatar}.jpg`" :alt="friend.name">
                             <div class="description">
                                 <h2>{{ friend.name }}</h2>
@@ -101,7 +102,7 @@
                     <div class="footer">
                         <i class="fa-regular fa-face-smile"></i>
                         <div class="message">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input type="text" placeholder="Scrivi un messaggio" ref="inputMessage" @keyup.enter="addInputMessage">
                         </div>
                         <i class="fa-solid fa-microphone"></i>
                     </div>
@@ -110,6 +111,10 @@
         </main>
 <!-- /MAIN -->
     </div>
+
+<!-- LUXOR -->
+<script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+<!-- /LUXOR -->
 
 <!-- SCRIPT-JS -->
     <script src="js/data.js"></script>

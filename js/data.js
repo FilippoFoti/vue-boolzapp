@@ -1,5 +1,8 @@
 const {createApp} = Vue;
 
+const dt = luxon.DateTime;
+console.log(dt.now().setLocale('it').toLocaleString(dt.TIME_24_SIMPLE));
+
 createApp ({
     data(){
         return {
@@ -169,14 +172,43 @@ createApp ({
             newContact: "",
             item: "",
             newMessage: "",
+            friendSearch: "",
+            indexContact: 0,
         }
     },
     methods: {
         change(item) {
+            this.indexContact = item;
             this.newContact = item.avatar;
             this.item = item;
             this.newMessage = item.messages;
+        },
+        setContact(index) {
+            this.indexContact = index;
+        },
+        addInputMessage(){
+            let curDate = new Date().toLocaleString("en-GB");
+            const input = this.$refs.inputMessage.value;  
+            const inputMessage = {
+                date: curDate,
+                message: input,
+                status: 'sent'
+            }
+            setTimeout(() => {
+                this.newMessage.push({
+                    date: curDate,
+                    message: 'ok',
+                    status: 'received'
+                })
+            }, 1000)
+            this.newMessage.push(inputMessage);
+            this.$refs.inputMessage.value= "";
+        },
+        searchContact() {
+            this.contacts.forEach(item => {
+                item.visible = item.name.toLowerCase().includes(this.friendSearch);
+            })
         }
-    }
+    },
 }).mount("#app");
 
