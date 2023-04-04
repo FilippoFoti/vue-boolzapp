@@ -91,13 +91,13 @@
 
                 <div class="chat">
                     <div class="container">
-                        <div class="newChat" v-for="newChat in newMessage" :class="newChat.status == 'sent' ? 'green' : 'white'">
+                        <div class="newChat" v-for="newChat, index in newMessage" :class="newChat.status == 'sent' ? 'green' : 'white'">
                             <p>{{ newChat.message }}</p>
-                            <div class="bonus" @click="toggleMenu(item)">
+                            <div class="bonus" @click="clickMenu(index)">
                                 <i class="fa-solid fa-angle-down"></i>
-                                <ul v-if="item.showMenu"  @mouseleave="hideMenu(item)">
+                                <ul v-if="messageIndex === index">
                                     <li>Info messaggio</li>
-                                    <li @click.stop="deleteMessage(item)">Elimina messaggio</li>
+                                    <li>Elimina messaggio</li>
                                 </ul>
                             </div>
                             <span>

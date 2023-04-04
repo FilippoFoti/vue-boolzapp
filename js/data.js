@@ -171,6 +171,7 @@ createApp ({
             newMessage: "",
             friendSearch: "",
             indexContact: 0,
+            messageIndex: null,
         }
     },
     methods: {
@@ -206,13 +207,10 @@ createApp ({
                 item.visible = item.name.toLowerCase().includes(this.friendSearch.toLowerCase());
             })
         },
-        toggleMenu(item) {
-            item.showMenu = !item.showMenu;
-        },
-        hideMenu(item) {
-            if (item.showMenu) {
-                item.showMenu = false;
-            }
+        clickMenu(index) {
+            // item.showMenu = !item.showMenu;
+            console.log(index);
+            this.messageIndex = index;
         },
     },
 }).mount("#app");
