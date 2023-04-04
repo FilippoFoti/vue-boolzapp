@@ -205,7 +205,15 @@ createApp ({
             this.contacts.forEach(item => {
                 item.visible = item.name.toLowerCase().includes(this.friendSearch.toLowerCase());
             })
-        }
+        },
+        toggleMenu(item) {
+            item.showMenu = !item.showMenu;
+        },
+        hideMenu(item) {
+            if (item.showMenu) {
+                item.showMenu = false;
+            }
+        },
     },
 }).mount("#app");
 

@@ -92,7 +92,17 @@
                 <div class="chat">
                     <div class="container">
                         <div class="newChat" v-for="newChat in newMessage" :class="newChat.status == 'sent' ? 'green' : 'white'">
-                            <p>{{ newChat.message }} <span>{{newChat.date.substring(11).slice(0, - 3)}}</span></p>
+                            <p>{{ newChat.message }}</p>
+                            <div class="bonus" @click="toggleMenu(item)">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <ul v-if="item.showMenu"  @mouseleave="hideMenu(item)">
+                                    <li>Info messaggio</li>
+                                    <li @click.stop="deleteMessage(item)">Elimina messaggio</li>
+                                </ul>
+                            </div>
+                            <span>
+                                {{newChat.date.substring(11).slice(0, - 3)}}
+                            </span>
                         </div>
                     </div>
                 </div>
